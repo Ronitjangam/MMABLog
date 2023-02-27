@@ -1,0 +1,16 @@
+{% extends 'base.html'  %}
+{% load static %} 
+
+
+{% block start %}
+{% for fighter in fighters %}
+<h1 class="m-5 p-5">{{fighter.title}}</h1>
+
+<div class="container">
+<p class="text-danger">Article by:-{{fighter.user}}</p>
+<p>{{fighter.created_at}}</p>
+<img src={% static '/'%}{{fighter.image}}></img><div>
+<div class="container-sm "> <p>{{fighter.content|safe}}</p></div>
+{% endfor %}
+
+{% endblock%}
